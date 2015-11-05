@@ -22,11 +22,6 @@ public class GraveServiceImpl implements GraveService {
 
 	@Override
 	public List<Grave> findAll() {
-		Grave g = new Grave();
-		g.setFirstname("Janek");
-		g.setLastname("Kowalski");
-		g.setLattitude(12.7986532);
-		graveRepo.save(g);
 		return (List<Grave>) graveRepo.findAll();
 	}
 

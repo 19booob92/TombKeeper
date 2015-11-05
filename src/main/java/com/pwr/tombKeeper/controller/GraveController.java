@@ -51,7 +51,7 @@ public class GraveController {
 		if (graves != null) {
 			return new ResponseEntity<>(graves, HttpStatus.OK);
 		} else {
-			return new ResponseEntity<>("Nie znaleziono grobu", HttpStatus.NOT_ACCEPTABLE);
+			return new ResponseEntity<>("Nie zapisano grobu", HttpStatus.NOT_ACCEPTABLE);
 		}
 	}
 
