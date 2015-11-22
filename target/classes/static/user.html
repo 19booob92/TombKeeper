@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="scheduleModule">
+<head>
+<title>Strona główna</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="lib/css/subjectsTypes.css">
+<script src="lib/angular.js"></script>
+<script src="mainModule.js"></script>
+
+
+</head>
+<body ng-controller="ScheduleCtrl">
+
+	<div class="container-fluid">
+		<table>
+			<tr>
+				<td><h4>Imię</h4></td>
+				<td><h4>Nazwisko</h4></td>
+				<td><h4></>Login</h4></td>
+				<td><h4></>Hasło</h4></td>
+				<td><h4></>Miasto</h4></td>
+				<td><h4></>E-mail</h4></td>
+			</tr>
+			<tr>
+				<td><input type="text" ng-model="user.name"></input></td>
+				<td><input type="text" ng-model="user.lastname"></input></td>
+				<td><input type="text" ng-model="user.login"></input></td>
+				<td><input type="password" ng-model="user.password"></input></td>
+				<td><input type="text" ng-model="user.city"></input></td>
+				<td><input type="text" ng-model="user.email"></input></td>
+			</tr>
+
+		</table>
+		<input type="button" value="zapisz" class="btn btn-info"
+			ng-click="saveHtml()"></input>
+
+	</div>
+
+</body>
+</html>

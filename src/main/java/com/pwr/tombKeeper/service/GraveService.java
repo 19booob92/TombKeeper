@@ -6,9 +6,9 @@ import com.pwr.tombKeeper.model.Grave;
 
 public interface GraveService {
 
-	List<Grave> findGravesByLastname(String lastname);
-
 	List<Grave> findAll();
 
 	Grave save(Grave grave);
+
+	List<Grave> findByLogin(String login);
 }

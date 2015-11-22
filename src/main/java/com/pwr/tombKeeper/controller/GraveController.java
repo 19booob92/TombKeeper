@@ -22,20 +22,9 @@ public class GraveController {
 	private GraveService graveService;
 	
 	@ResponseBody
-	@RequestMapping(value = "/grave/{lastname}", method = RequestMethod.GET)
-	public ResponseEntity<?> getGraves(@PathVariable String lastname) {
-		List<Grave> graves = graveService.findGravesByLastname(lastname);
-		if (graves != null && !graves.isEmpty()) {
-			return new ResponseEntity<>(graves, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>("Nie znaleziono grobu", HttpStatus.NOT_FOUND);
-		}
-	}
-	
-	@ResponseBody
-	@RequestMapping(value = "/grave", method = RequestMethod.GET)
-	public ResponseEntity<?> getAllGraves() {
-		List<Grave> graves = graveService.findAll();
+	@RequestMapping(value = "/grave/{login}", method = RequestMethod.GET)
+	public ResponseEntity<?> getGravesForUser(@PathVariable String login) {
+		List<Grave> graves = graveService.findByLogin(login);
 		if (graves != null && !graves.isEmpty()) {
 			return new ResponseEntity<>(graves, HttpStatus.OK);
 		} else {
