@@ -14,4 +14,8 @@ public interface GraveRepo extends CrudRepository<Grave, Long> {
 
 	Grave findByLastnameAndFirstname(String lastnamePK, String firstnamePK);
 
+	Grave findByLattitudeAndLongtitude(String x, String y);
+
+	Grave findById(String id);
+
 }

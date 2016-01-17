@@ -1,25 +1,38 @@
 package com.pwr.tombKeeper.model;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Grave implements Serializable{
 
+	@Id
+	private String id;
+	
 	private static final long serialVersionUID = -8332624711297311413L;
 
 	private String firstname;
 
 	private String lastname;
 	
-	private Double lattitude;
+	private String lattitude;
 	
-	private Double longtitude;
+	private String longtitude;
 	
 	private List<Human> owners;
 
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 	
 	public List<Human> getOwners() {
 		return owners;
@@ -29,13 +42,6 @@ public class Grave implements Serializable{
 		this.owners = owners;
 	}
 
-	public double getLongtitude() {
-		return longtitude;
-	}
-
-	public void setLongtitude(double longtitude) {
-		this.longtitude = longtitude;
-	}
 
 	public String getFirstname() {
 		return firstname;
@@ -53,13 +59,6 @@ public class Grave implements Serializable{
 		this.lastname = lastname;
 	}
 
-	public double getLattitude() {
-		return lattitude;
-	}
-
-	public void setLattitude(double d) {
-		this.lattitude = d;
-	}
 	
 	@Override
 	public int hashCode() {
@@ -79,5 +78,31 @@ public class Grave implements Serializable{
 		return this.getFirstname().equals(toCompare.getFirstname())
 				&& this.getLastname().equals(toCompare.getLastname());
 	}
+
+
+	public String getLattitude() {
+		return lattitude;
+	}
+
+	public void setLattitude(String lattitude) {
+		this.lattitude = lattitude;
+	}
+
+	public String getLongtitude() {
+		return longtitude;
+	}
+
+	public void setLongtitude(String longtitude) {
+		this.longtitude = longtitude;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public void setOwners(List<Human> owners) {
+		this.owners = owners;
+	}
+
 	
 }

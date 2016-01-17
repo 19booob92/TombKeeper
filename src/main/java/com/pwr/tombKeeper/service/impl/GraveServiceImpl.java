@@ -1,6 +1,5 @@
 package com.pwr.tombKeeper.service.impl;
 
-import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +46,21 @@ public class GraveServiceImpl implements GraveService {
 	@Override
 	public List<Grave> findByLogin(String login) {
 		return graveRepo.findByOwnersLogin(login);
+	}
+
+	@Override
+	public Grave findById(String id) {
+		return graveRepo.findById(id);
+	}
+
+	@Override
+	public Grave findByLocation(String x, String y) {
+		return graveRepo.findByLattitudeAndLongtitude(x, y);
+	}
+
+	@Override
+	public void delete(Grave grave) {
+		graveRepo.delete(grave);
 	}
 
 }

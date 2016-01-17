@@ -11,4 +11,10 @@ public interface GraveService {
 	Grave save(Grave grave);
 
 	List<Grave> findByLogin(String login);
+	
+	Grave findById(String id);
+
+	Grave findByLocation(String x, String y);
+	
+	void delete(Grave grave);
 }
